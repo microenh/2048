@@ -20,9 +20,9 @@ class Main():
         self.fps: int = 0
         if SHOW_FPS:
             self.setup_fps()
-##        self.tiles: list[Tile] = [Tile(4 << i, i) for i in range(16)]
         self.tiles: list[Tile] = []
         self.restart()
+        # self.tiles: list[Tile] = [Tile(4 << i, i) for i in range(16)]
         self.run()
 
     def restart(self) -> None:
@@ -95,7 +95,8 @@ class Main():
                          border_radius=GO_FONT_SIZE)
         rect.center = self.go_bg_rect.center
         self.go_bg_surf.blit(go_surf, rect)
-        self.go_bg_rect.center = self.screen_rect.center
+        self.go_bg_rect.centerx = self.screen_rect.centerx
+        self.go_bg_rect.centery = SCREEN_DIM // 2
         
 
     def setup_fps(self) -> None:
