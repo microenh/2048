@@ -2,10 +2,10 @@ import pygame
 
 pygame.init()
 
-MIN_SCREEN_HEIGHT = min([i[1] for i in pygame.display.get_desktop_sizes()])
+MIN_SCREEN_HEIGHT = min([i[1] for i in pygame.display.get_desktop_sizes()] + [800])
 
-SCREEN_DIM: int = MIN_SCREEN_HEIGHT // 3
-LEGEND_V: int = SCREEN_DIM // 4
+LEGEND_V: int = (MIN_SCREEN_HEIGHT - 100) // 5
+SCREEN_DIM: int = LEGEND_V * 4
 
 SCREEN_SIZE: tuple[int, int] = (SCREEN_DIM, SCREEN_DIM + LEGEND_V)
 
