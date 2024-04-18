@@ -2,8 +2,10 @@ import pygame
 
 pygame.init()
 
-SCREEN_DIM: int = 800
-LEGEND_V: int = 200
+MIN_SCREEN_HEIGHT = min([i[1] for i in pygame.display.get_desktop_sizes()])
+
+SCREEN_DIM: int = MIN_SCREEN_HEIGHT // 3
+LEGEND_V: int = SCREEN_DIM // 4
 
 SCREEN_SIZE: tuple[int, int] = (SCREEN_DIM, SCREEN_DIM + LEGEND_V)
 
@@ -21,7 +23,7 @@ FPS: int = 8
 BG_COLOR: pygame.Color = pygame.Color('burlywood1')
 
 TEXT_COLOR: pygame.Color = pygame.Color('azure4')
-TEXT_FONT: pygame.font.Font = pygame.font.Font(None, 256 // COLS)
+TEXT_FONT: pygame.font.Font = pygame.font.Font(None, SCREEN_DIM // 8)
 
 FPS_FONT_SIZE: int = SCREEN_DIM // 20
 FPS_OFFSET: int = FPS_FONT_SIZE // 2
@@ -38,7 +40,7 @@ SCORE_LEFT: int = DIVIDER_WIDTH
 SCORE_TOP: int = SCREEN_DIM + 8
 MOVES_TOP: int = SCORE_TOP + SCORE_FONT_SIZE
 HIGH_TOP: int = MOVES_TOP + SCORE_FONT_SIZE
-SCORE_RIGHT: int = 300
+SCORE_RIGHT: int = (SCREEN_DIM * 3) // 8
 KEYS_V_OFFSET: int = 4
 
 GO_FONT_SIZE: int = SCREEN_DIM // 8

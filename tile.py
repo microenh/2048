@@ -30,7 +30,9 @@ class Tile:
         self.value = value
         self.surf.fill(TILE_BG[self.value])
         pygame.draw.rect(self.surf, (0,0,0), self.surf_rect, width=1)
-        text_surf: pygame.Surface = TEXT_FONT.render(f'{self.value}', True, TEXT_COLOR)
+        text_surf: pygame.Surface = TEXT_FONT.render(
+            f'{self.value}' if self.value < 10_000 else f'{self.value // 1024}K',
+            True, TEXT_COLOR)
         text_rect: pygame.Rect = text_surf.get_rect(center = self.surf_rect.center)
         self.surf.blit(text_surf, text_rect)
 
