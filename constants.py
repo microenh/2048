@@ -41,7 +41,7 @@ HIGH_TOP: int = MOVES_TOP + SCORE_FONT_SIZE
 SCORE_RIGHT: int = 300
 KEYS_V_OFFSET: int = 4
 
-GO_FONT_SIZE: int = 512 // COLS
+GO_FONT_SIZE: int = SCREEN_DIM // 8
 GO_FONT: pygame.font.Font = pygame.font.Font(None, GO_FONT_SIZE)
 GO_COLOR: pygame.Color = pygame.Color('yellow')
 GO_BG_COLOR: pygame.Color = pygame.Color('blue')
