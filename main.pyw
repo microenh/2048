@@ -5,6 +5,7 @@ import pygame
 from constants import *
 from tile import Tile
 
+
 class Main():
     def __init__(self) -> None:
         pygame.init()
